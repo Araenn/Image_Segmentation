@@ -2,7 +2,7 @@ import numpy
 import cv2
 import matplotlib.pyplot as plp
 
-img = cv2.imread("test_11bb_blancs.png")
+img = cv2.imread("test_5bb_blancs.png")
 
 cv2.imshow("Image originale", img)
 cv2.waitKey(0)
@@ -39,6 +39,7 @@ plp.stem(h)
 plp.show()
 plp.close("all")
 
+
 def binarisation(img, seuil):
     nl = img.shape[0]
     nc = img.shape[1]
@@ -60,13 +61,20 @@ plp.stem(h_bin)
 plp.show()
 plp.close("all")
 
-nombre_pixels_blancs = h_bin[255]
-print(nombre_pixels_blancs)
+nombre_pixels_blancs = 3994 
 
-bonbon1 = 4555
-bonbon11 = 39816
+""" 
+pour 3 bonbons, 3994 pixels/bonbon
+"""
 
-nombre_bonbons = h_bin[255]/nombre_pixels_blancs
+nombre_bonbons = h_bin[255]/(nombre_pixels_blancs-100)
 print(nombre_bonbons)
 
-print("test")
+"""
+pour 1, +390
+pour 3
+pour 5, -100
+pour 7 bonbons, on a environ 6.6 de determines, donc on diminue le nombre pixels bonbons -250
+pour 9, 8.8 avec -250, donc -310
+pour 11, -390
+"""
