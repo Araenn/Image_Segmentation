@@ -69,4 +69,3 @@ bonbon11 = 39816
 nombre_bonbons = h_bin[255]/nombre_pixels_blancs
 print(nombre_bonbons)
 
-print(39816/4555)
