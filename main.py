@@ -78,3 +78,12 @@ pour 7 bonbons, on a environ 6.6 de determines, donc on diminue le nombre pixels
 pour 9, 8.8 avec -250, donc -310
 pour 11, -390
 """
+def calibration():
+    x1 = 1
+    y1 = 390
+    x2 = 11
+    y2 = -390
+    alpha = (y2 - y1)/(x2 - x1)
+    beta = 3
+    t = numpy.array(500)
+    y = alpha*t - beta
